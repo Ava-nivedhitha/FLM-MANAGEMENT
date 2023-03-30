@@ -113,3 +113,23 @@ export async function updateTrailerDetails(trailerDetails)
 
     return response.data;
 }
+export async function searchTrailerDetails(value)
+{
+    let config =
+    {
+        url : `http://localhost:4000/forklift/searchtrailerdetails?value=${value}`,
+        header:
+        {
+            "content-type" : "application/json",
+        },
+        method : "POST"
+    };
+
+ 
+
+    const response = await client(config);
+
+ 
+
+    return response.data;
+}
