@@ -34,7 +34,7 @@ jobs:
       uses: actions/checkout@v2
     - name: Zip folder
       run: |
-        zip -r folder.zip path/to/Backend
+        zip -r folder.zip path/to/Backend/
 
 
 
