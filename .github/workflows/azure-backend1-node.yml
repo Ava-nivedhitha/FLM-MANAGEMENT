@@ -1,5 +1,4 @@
 name: Deploy Node.js to Azure Web App
-
 on:
   [push]
 
@@ -19,9 +18,7 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ env.NODE_VERSION }}
-
- 
-
+        
   zip-folder-job:
     runs-on: ubuntu-latest
     steps:
@@ -34,7 +31,6 @@ jobs:
       with:
         name: folder-zip
         path: folder.zip
-
 
     - name: 'Deploy to Azure WebApp'
       uses: azure/webapps-deploy@v2
