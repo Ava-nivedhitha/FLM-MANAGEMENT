@@ -1,18 +1,12 @@
 name: Deploy Node.js to Azure Web App
 
- 
-
 on:
   [push]
-
- 
 
 env:
   AZURE_WEBAPP_NAME: FLM-NP-EUS-AS     # set this to your application's name
   AZURE_WEBAPP_PACKAGE_PATH: '.'      # set this to the path to your web app project, defaults to the repository root
   NODE_VERSION: '16.x'                
-
- 
 
 jobs:
   build-and-deploy:
@@ -41,7 +35,6 @@ jobs:
         name: folder-zip
         path: folder.zip
 
- 
 
     - name: 'Deploy to Azure WebApp'
       uses: azure/webapps-deploy@v2
