@@ -26,15 +26,21 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ env.NODE_VERSION }}
+        name: zip-folder
 
-  zip-folder:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-    - name: Zip folder
-      run: |
-        zip -r folder.zip path/to/Backend/
+
+  zip-folder-job:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+    - name: Compress folder
+      run: zip -r folder.zip Backend/
+    - name: Upload artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: folder-zip
+        path: folder.zip
 
 
 
